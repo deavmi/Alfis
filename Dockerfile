@@ -1,4 +1,7 @@
-FROM rust:alpine3.23 AS build
+FROM debian:latest AS build
+
+RUN apt update
+RUN apt install cargo -y
 
 RUN mkdir /src
 COPY . /src
